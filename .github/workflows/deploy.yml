@@ -3,7 +3,7 @@ name: Deploy to 1&1 Webhosting
 on:
   push:
     branches:
-      - main  # Falls dein Branch 'master' heißt, ändere 'main' in 'master'
+      - main  # falls dein Hauptbranch 'master' heißt, bitte anpassen
 
 jobs:
   web-deploy:
@@ -19,5 +19,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public/
+          sftp: true               # Aktiviert SFTP statt FTP
+          port: 22                 # Setzt den SFTP-Port
+          server-dir: /public/     # Dein Pfad bei IONOS
           dangerous-clean-slate: true
