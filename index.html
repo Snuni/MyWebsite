@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingenieurbüro Idrizi</title>
+    <meta name="description" content="Geförderte Energieberatung (iSFP) durch M.Sc. Ingenieur Sinan Idrizi in Weil der Stadt.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',      /* Edles Dunkelblau */
+                            slate: '#1E293B',     /* Hintergrund Nuance */
+                            surface: '#4F172A',   /* Karten-Hintergrund */
+                            border: '#334155',    /* Dezente Trennlinien */
+                            crimson: '#E11D48',   /* Dezent platzierte Akzentfarbe */
+                            green: '#10B981',     /* Fördergeld/Kalkulation */
+                            gold: '#D97706',      /* Premium / Akzent */
+                            blue: '#3883D6',
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #E2E8F0;
+        }
+        .font-mono-tech {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Dezentes CAD-Raster im Hintergrund */
+        .cad-grid {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="cad-grid min-h-screen flex flex-col justify-between selection:bg-brand-crimson selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-md border-b border-brand-border/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo / Brand -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded border border-brand-border bg-brand-slate flex items-center justify-center text-brand-crimson font-bold text-xl group-hover:border-brand-crimson transition-colors">
+                    lol
+                </div>
+                <div>
+                    <div class="font-bold tracking-tight text-white text-lg flex items-center gap-2">
+                        INGENIEURBÜRO IDRIZI
+                        <span class="text-[14px] font-mono-tech px-1.5 py-0.5 rounded bg-brand-slate border border-brand-border text-slate-300 ">M.Sc.</span>
+                    </div>
+                    <div class="text-xs font-mono-tech text-slate-400">ENERGIEBERATUNG</div>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#leistungen" class="hover:text-white transition-colors">Leistungen</a>
+                <a href="#rechner" class="hover:text-white transition-colors">Förderrechner</a>
+                <a href="#ueber-uns" class="hover:text-white transition-colors">Profil</a>
+                <a href="#kontakt" class="hover:text-white transition-colors">Kontakt</a>
+            </nav>
+
+            <!-- Header CTA -->
+            <a href="#kontakt" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-mono-tech font-semibold text-white bg-brand-slate border border-brand-border hover:border-brand-crimson hover:bg-brand-crimson/10 rounded transition-all">
+                <i class="fa-solid fa-calculator text-brand-crimson"></i>
+                PROJEKT ANFRAGEN
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 lg:py-28 overflow-hidden border-b border-brand-border/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-slate/80 border border-brand-border text-xs font-mono-tech text-slate-300">
+                        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                        Zertifiziert Energieeffizienz-Experte (BAFA / KfW)
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                        Energieberatung <br>
+                        <span class="text-slate-400 font-light">&amp; Wärmepumpen-Planung.</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
+                        Wir berechnen, bewerten und dokumentieren die technische Grundlage Ihres Sanierungs- und Heizungsprojekts – normgerecht nach DIN EN 12831 und DIN V 18599. Von der exakten Raumheizlast bis zur maximalen Förderquote.
+                    </p>
+
+                    <!-- Bullet Points -->
+                    <div class="grid sm:grid-cols-2 gap-3 text-xs font-mono-tech text-slate-300 pt-2">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            Individueller Sanierungsfahrplan (iSFP)
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            Raumweise Heizlastberechnung
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            Hydraulischer Abgleich Verf. B
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-green"></i>
+                            Förderantragsstellung BAFA / KfW
+                        </div>
+                    </div>
+
+                    <!-- Hero CTAs -->
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#kontakt" class="px-6 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-rose-700 rounded transition-colors flex items-center gap-2 shadow-lg shadow-rose-950/30">
+                            Erstgespräch vereinbaren
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#rechner" class="px-6 py-3 text-sm font-semibold text-slate-200 bg-brand-slate hover:bg-slate-800 border border-brand-border rounded transition-colors flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-brand-green"></i>
+                            Förderrechner starten
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Technical Blueprint Spec Box -->
+                <div class="lg:col-span-5 bg-brand-slate/60 border border-brand-border rounded-lg p-6 backdrop-blur-sm relative shadow-2xl">
+                    <div class="text-xs font-mono-tech text-slate-400 border-b border-brand-border/60 pb-3 mb-4 flex justify-between items-center">
+                        <span>Unser Qualitätsversprechen</span>
+                        <span class="text-brand-blue">WEIL DER STADT</span>
+                    </div>
+
+                    <div class="space-y-4 font-mono-tech text-xs">
+                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
+                            <span class="text-slate-400">QUALIFIKATION:</span>
+                            <span class="text-white font-bold">M.Sc. Ingenieur</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
+                            <span class="text-slate-400">CAD / SIMULATION:</span>
+                            <span class="text-white">Hottgenroth Simulation</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
+                            <span class="text-slate-400">NORMENBASIS:</span>
+                            <span class="text-slate-200">DIN EN 12831 / DIN V 18599</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
+                            <span class="text-slate-400">FÖRDERFÄHIGKEIT:</span>
+                            <span class="text-brand-green font-bold">Bis zu 50% - 80% Zuschuss</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-3 rounded bg-brand-navy border border-brand-border text-[11px] text-slate-400 font-mono-tech leading-relaxed">
+                        <i class="fa-solid fa-circle-info text-brand-blue mr-1"></i>
+                        Vermeiden Sie Fehldimensionierungen bei Wärmepumpen. Unsere exakten Berechnungen sichern Effizienz und volle Fördermittel.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Leistungen Section -->
+    <section id="leistungen" class="py-20 border-b border-brand-border/40 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <div class="text-xs font-mono-tech text-brand-blue uppercase tracking-widest">Leistungsspektrum</div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Ingenieurdienstleistungen nach Maß</h2>
+                <p class="text-slate-400 text-sm">Transparente, normgerechte Vorbereitung und Baubegleitung für Ihr Sanierungsvorhaben.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="bg-brand-slate/40 border border-brand-border rounded-lg p-6 hover:border-brand-crimson/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded bg-brand-navy border border-brand-border flex items-center justify-center text-brand-blue text-xl font-mono-tech">
+                            01
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Individueller Sanierungsfahrplan (iSFP)</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Geförderte Vor-Ort-Energieberatung für Wohngebäude. Erarbeitung eines Schritt-für-Schritt Fahrplans für Dämmung, Anlagentechnik und Effizienzsteigerung.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/40 flex justify-between items-center text-xs font-mono-tech">
+                        <span class="text-slate-500">Norm: DIN EN 12831</span>
+                        <span class="text-brand-green">650 € Förderfähig</span>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-brand-slate/40 border border-brand-border rounded-lg p-6 hover:border-brand-crimson/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded bg-brand-navy border border-brand-border flex items-center justify-center text-brand-blue text-xl font-mono-tech">
+                            02
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Raumweise Heizlastberechnung</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Akkurate Erfassung aller Raumgeometrien und U-Werte nach DIN EN 12831. Erforderlich für die optimale Dimensionierung von Wärmepumpen und Heizflächen.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/40 flex justify-between items-center text-xs font-mono-tech">
+                        <span class="text-slate-500">BAFA Zuschuss</span>
+                        <span class="text-brand-green">50% Förderfähig</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-brand-slate/40 border border-brand-border rounded-lg p-6 hover:border-brand-crimson/50 transition-all flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded bg-brand-navy border border-brand-border flex items-center justify-center text-brand-blue text-xl font-mono-tech">
+                            03
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Baubegleitung</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Qualifizierte Begleitung der Umsetzung vor Ort für lückenlosen Nachweis bei KfW / BAFA.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/40 flex justify-between items-center text-xs font-mono-tech">
+                        <span class="text-slate-500">Qualitätssicherung</span>
+                        <span class="text-brand-green">50% Förderfähig</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator / Förderrechner -->
+    <section id="rechner" class="py-20 border-b border-brand-border/40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-slate/80 border border-brand-border rounded-xl p-6 sm:p-10 shadow-2xl">
+                <div class="border-b border-brand-border/60 pb-6 mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div>
+                        <div class="text-xs font-mono-tech text-brand-green uppercase">Kalkulator</div>
+                        <h2 class="text-xl sm:text-2xl font-bold text-white">Transparente Eigenanteils-Berechnung</h2>
+                    </div>
+                    <span class="text-xs font-mono-tech px-3 py-1 bg-brand-navy border border-brand-border rounded text-slate-300">
+                        BAFA / KfW Richtlinie 2026
+                    </span>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4 text-xs font-mono-tech">
+                        <p class="text-slate-300 leading-relaxed font-sans text-sm">
+                            Wählen Sie Ihr gewünschtes Dienstleistungspaket aus, um den voraussichtlichen staatlichen Zuschuss und Ihren effektiven Eigenanteil zu ermitteln.
+                        </p>
+
+                        <!-- Select Package -->
+                        <div>
+                            <label class="block text-slate-400 mb-2">Dienstleistungspaket wählen:</label>
+                            <select id="calc-package" onchange="updateCalc()" class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson">
+                                <option value="heizlast">Raumweise Heizlastberechnung (900 € netto)</option>
+                                <option value="isfp">Individueller Sanierungsfahrplan iSFP (1.900 € netto)</option>
+                                <option value="kombi">Kombipaket (Heizlast + iSFP + Antrag) (3.000 € netto)</option>
+                            </select>
+                        </div>
+
+                        <!-- Checkbox Bonus -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <input type="checkbox" id="calc-bonus" onchange="updateCalc()" class="w-4 h-4 rounded bg-brand-navy border-brand-border text-brand-crimson focus:ring-0" checked>
+                            <label for="calc-bonus" class="text-slate-300 font-sans text-xs">
+                                Eröffnungs- &amp; Referenzkunden-Bonus anrechnen (-100 € bis -300 €)
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Result Box -->
+                    <div class="bg-brand-navy border border-brand-border rounded-lg p-6 space-y-3 font-mono-tech text-xs">
+                        <div class="flex justify-between text-slate-400">
+                            <span>Honorar (netto):</span>
+                            <span id="res-netto" class="text-white">900,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-slate-400">
+                            <span>Gesamtbetrag (inkl. 19% MwSt):</span>
+                            <span id="res-brutto" class="text-white">1.071,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-brand-green font-bold border-t border-brand-border/40 pt-2">
+                            <span>Staatlicher Zuschuss (ca.):</span>
+                            <span id="res-zuschuss">- 450,00 €</span>
+                        </div>
+                        <div class="flex justify-between text-brand-blue font-bold">
+                            <span>Eröffnungs-Bonus:</span>
+                            <span id="res-bonus">- 100,00 €</span>
+                        </div>
+                        <div class="border-t-2 border-brand-border pt-3 mt-2 flex justify-between items-center text-sm font-bold">
+                            <span class="text-white">Effektiver Eigenanteil:</span>
+                            <span id="res-eigenanteil" class="text-brand-green text-base">ca. 521,00 €</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="kontakt" class="py-20 border-b border-brand-border/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <div class="text-xs font-mono-tech text-brand-blue uppercase">Projektanfrage</div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">Starten Sie Ihr Sanierungsvorhaben</h2>
+                <p class="text-slate-400 text-sm">Senden Sie uns Ihre Daten für eine unverbindliche Ersteinschätzung.</p>
+            </div>
+
+            <div class="bg-brand-slate/60 border border-brand-border rounded-lg p-6 sm:p-8">
+
+                <!-- Notice if redirected after sending -->
+                <script>
+                    if (window.location.search.includes('gesendet=success')) {
+                        document.write('<div class="mb-6 p-4 bg-emerald-950/80 border border-emerald-500/50 rounded text-emerald-200 text-xs font-mono-tech text-center"><i class="fa-solid fa-circle-check mr-2"></i>Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns umgehend bei Ihnen.</div>');
+                    }
+                </script>
+
+                <!-- PHP Compatible Form -->
+                <form action="send.php" method="POST" class="space-y-4 text-xs font-mono-tech">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-slate-400 mb-1">Vor- &amp; Nachname *</label>
+                            <input type="text" name="name" required class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">E-Mail-Adresse *</label>
+                            <input type="email" name="email" required class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-slate-400 mb-1">Telefonnummer</label>
+                            <input type="tel" name="telefon" class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 mb-1">Gewünschte Leistung</label>
+                            <select name="leistung" class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson">
+                                <option value="Heizlastberechnung">Raumweise Heizlastberechnung</option>
+                                <option value="iSFP Energieberatung">iSFP Energieberatung</option>
+                                <option value="Förderantragstellung">Förderantragstellung BAFA / KfW</option>
+                                <option value="Gesamtanfrage">Gesamtanfrage / Sonstiges</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-400 mb-1">Details zum Objekt / Ihr Anliegen</label>
+                        <textarea name="nachricht" rows="4" required class="w-full bg-brand-navy border border-brand-border rounded px-3 py-2 text-white focus:outline-none focus:border-brand-crimson" placeholder="z. B. Einfamilienhaus in Weil der Stadt, Baujahr 1985, geplanter Wärmepumpentausch..."></textarea>
+                    </div>
+
+                    <div class="pt-2 flex justify-between items-center">
+                        <span class="text-slate-500 text-[10px]">Ihre Daten werden vertraulich behandelt.</span>
+                        <button type="submit" class="px-6 py-3 font-semibold text-white bg-brand-crimson hover:bg-rose-700 rounded transition-colors flex items-center gap-2">
+                            Anfrage jetzt absenden
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#070A0F] py-12 border-t border-brand-border/60 text-xs font-mono-tech text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+            <div class="space-y-2">
+                <div class="text-white font-bold font-sans">INGENIEURBÜRO IDRIZI</div>
+                <div>Sinan Idrizi, M.Sc.</div>
+                <div>TGA-Fachplanung &amp; Energieberatung</div>
+                <div>Weil der Stadt</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-slate-300 font-bold font-sans">KONTAKT</div>
+                <div>E-Mail: info@ing-idriz.de</div>
+                <div>Web: www.ing-idriz.de</div>
+            </div>
+            <div class="space-y-2 text-right md:text-right">
+                <div>&copy; 2026 Ingenieurbüro Idrizi</div>
+                <div>Alle Rechte vorbehalten.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Calculator -->
+    <script>
+        function updateCalc() {
+            const pkg = document.getElementById('calc-package').value;
+            const useBonus = document.getElementById('calc-bonus').checked;
+
+            let netto = 900;
+            let zuschuss = 450;
+            let bonus = 100;
+
+            if (pkg === 'isfp') {
+                netto = 1900;
+                zuschuss = 650; // Festbetrag BAFA
+                bonus = 200;
+            } else if (pkg === 'kombi') {
+                netto = 3000;
+                zuschuss = 1500;
+                bonus = 300;
+            }
+
+            if (!useBonus) bonus = 0;
+
+            const brutto = netto * 1.19;
+            const eigenanteil = brutto - zuschuss - bonus;
+
+            document.getElementById('res-netto').innerText = netto.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('res-brutto').innerText = brutto.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('res-zuschuss').innerText = '- ' + zuschuss.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('res-bonus').innerText = '- ' + bonus.toFixed(2).replace('.', ',') + ' €';
+            document.getElementById('res-eigenanteil').innerText = 'ca. ' + Math.max(0, eigenanteil).toFixed(2).replace('.', ',') + ' €';
+        }
+    </script>
+</body>
+</html>
