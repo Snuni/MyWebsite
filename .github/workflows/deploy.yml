@@ -26,7 +26,6 @@ jobs:
           script: |
             const Client = require('ssh2-sftp-client');
             const sftp = new Client();
-            const fs = require('fs');
             
             const config = {
               host: process.env.FTP_SERVER,
@@ -40,9 +39,9 @@ jobs:
               await sftp.connect(config);
               console.log('Connected successfully!');
 
-              // Hochladen der index.html in den /public Ordner
+              // Lädt die index.html direkt in das Startverzeichnis hoch
               console.log('Uploading index.html...');
-              await sftp.put('./index.html', '/public/index.html');
+              await sftp.put('./index.html', './index.html');
               console.log('Upload complete!');
 
             } catch (err) {
