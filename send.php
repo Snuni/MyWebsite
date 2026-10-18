@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $message = trim($_POST["nachricht"]);
 
   // Wohin soll die E-Mail gehen?
-  $to = "info@ing-idriz.de";
+  $to = "info@ing-idrizi.de";
   $subject = "Neue Projektanfrage von Website: " . $name;
 
   // E-Mail-Inhalt zusammenbauen
