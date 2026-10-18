@@ -1,0 +1,23 @@
+name: Deploy to 1&1 Webhosting
+
+on:
+  push:
+    branches:
+      - main  # Falls dein Branch 'master' heißt, ändere 'main' in 'master'
+
+jobs:
+  web-deploy:
+    name: Deploy Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      - name: Sync files to 1&1 FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public/
+          dangerous-clean-slate: true
