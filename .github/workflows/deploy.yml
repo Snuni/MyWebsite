@@ -12,15 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy via SFTP
-        uses: cross-the-world/ssh-scp-ssh-pipeline@v1.2.0
+      - name: Copy files via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
-          pass: ${{ secrets.FTP_PASSWORD }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 22
-          connect_timeout: 30s
-          # Löscht den Inhalt von /public und lädt die aktuellen Dateien hoch
-          rm_remote: true
-          remote_path: /public/
           source: "."
+          target: "/public/"
+          rm: true # Löscht alte Dateien auf dem Server vor dem Hochladen
