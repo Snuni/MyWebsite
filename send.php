@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $phone = strip_tags(trim($_POST["telefon"]));
   $message = trim($_POST["nachricht"]);
 
-  // Wohin soll die E-Mail gehen?
+ // Wohin soll die E-Mail gehen?
   $to = "info@ing-idrizi.de";
   $subject = "Neue Projektanfrage von Website: " . $name;
 
@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email_content .= "Telefon: $phone\n\n";
   $email_content .= "Nachricht:\n$message\n";
 
-  $headers = "From: noreply@ing-idriz.de\r\n";
+  // Nutze eine bei IONOS existierende Adresse als Absender
+  $headers = "From: info@ing-idrizi.de\r\n";
   $headers .= "Reply-To: $email\r\n";
-
+  
   // E-Mail über den 1&1 Server senden
   if (mail($to, $subject, $email_content, $headers)) {
     // Weiterleitung zurück auf die Website mit Erfolgshinweis
