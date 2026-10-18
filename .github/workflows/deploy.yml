@@ -20,12 +20,14 @@ jobs:
       - name: Install sftp client
         run: npm install ssh2-sftp-client
 
-      - name: Deploy to IONOS
+      - name: Deploy all files to IONOS
         uses: actions/github-script@v7
         with:
           script: |
             const Client = require('ssh2-sftp-client');
             const sftp = new Client();
+            const path = require('path');
+            const fs = require('fs');
             
             const config = {
               host: process.env.FTP_SERVER,
@@ -34,15 +36,41 @@ jobs:
               password: process.env.FTP_PASSWORD
             };
 
+            // Hilfsfunktion, um lokale Ordner rekursiv hochzuladen
+            async function uploadDirectory(localDir, remoteDir) {
+              // Stelle sicher, dass der Remote-Ordner existiert
+              let remoteExists = await sftp.exists(remoteDir);
+              if (!remoteExists) {
+                await sftp.mkdir(remoteDir, true);
+              }
+
+              const items = fs.readdirSync(localDir, { withFileTypes: true });
+
+              for (const item of items) {
+                // Versteckte Ordner/Dateien wie .git, .github etc. überspringen
+                if (item.name.startsWith('.')) continue;
+
+                const localPath = path.join(localDir, item.name);
+                const remotePath = `${remoteDir}/${item.name}`;
+
+                if (item.isDirectory()) {
+                  await uploadDirectory(localPath, remotePath);
+                } else if (item.isFile()) {
+                  console.log(`Uploading: ${item.name} -> ${remotePath}`);
+                  await sftp.put(localPath, remotePath);
+                }
+              }
+            }
+
             try {
               console.log('Connecting to IONOS SFTP...');
               await sftp.connect(config);
               console.log('Connected successfully!');
 
-              // Lädt die index.html direkt in das Startverzeichnis hoch
-              console.log('Uploading index.html...');
-              await sftp.put('./index.html', './index.html');
-              console.log('Upload complete!');
+              console.log('Starting full repository upload...');
+              // Lädt das aktuelle Verzeichnis (.) in das SFTP-Zielverzeichnis (.) hoch
+              await uploadDirectory('.', '.');
+              console.log('All files uploaded successfully!');
 
             } catch (err) {
               console.error('SFTP Error:', err);
