@@ -1,24 +1,26 @@
-name: Deploy to 1&1 Webhosting
+name: Deploy to 1&1 Webhosting via SFTP
 
 on:
   push:
     branches:
-      - main  # Falls dein Branch 'master' heißt, bitte anpassen
+      - main
 
 jobs:
-  web-deploy:
-    name: Deploy Website
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Get latest code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Sync files to 1&1 FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via SFTP
+        uses: cross-the-world/ssh-scp-ssh-pipeline@v1.2.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp           # Richtiges Attribut für SFTP bei dieser Action
-          server-dir: ./
-          dangerous-clean-slate: true
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          pass: ${{ secrets.FTP_PASSWORD }}
+          port: 22
+          connect_timeout: 30s
+          # Löscht den Inhalt von /public und lädt die aktuellen Dateien hoch
+          rm_remote: true
+          remote_path: /public/
+          source: "."
