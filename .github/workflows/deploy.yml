@@ -12,13 +12,46 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: SFTP Deploy
-        uses: casperskidaddle/sftp-action@v2.4.1
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 22
-          local_path: './'
-          remote_path: '/public/'
-          args: '-o ConnectTimeout=30'
+          node-version: '20'
+
+      - name: Install sftp client
+        run: npm install ssh2-sftp-client
+
+      - name: Deploy to IONOS
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const Client = require('ssh2-sftp-client');
+            const sftp = new Client();
+            const fs = require('fs');
+            
+            const config = {
+              host: process.env.FTP_SERVER,
+              port: 22,
+              username: process.env.FTP_USERNAME,
+              password: process.env.FTP_PASSWORD
+            };
+
+            try {
+              console.log('Connecting to IONOS SFTP...');
+              await sftp.connect(config);
+              console.log('Connected successfully!');
+
+              // Hochladen der index.html in den /public Ordner
+              console.log('Uploading index.html...');
+              await sftp.put('./index.html', '/public/index.html');
+              console.log('Upload complete!');
+
+            } catch (err) {
+              console.error('SFTP Error:', err);
+              core.setFailed(err.message);
+            } finally {
+              await sftp.end();
+            }
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
