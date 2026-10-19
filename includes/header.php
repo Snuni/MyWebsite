@@ -80,7 +80,7 @@
     <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-md border-b border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group py-2">
-                <img src="img/logo.svg" alt="Ingenieurbüro Idrizi Logo" class="h-10 w-auto object-contain">
+                <img src="img/logo.png" alt="Ingenieurbüro Idrizi Logo" class="h-10 w-auto object-contain">
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#leistungen" class="hover:text-white transition-colors">Leistungen</a>
