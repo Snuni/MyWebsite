@@ -4,7 +4,7 @@
             <div class="space-y-2">
                 <div class="text-white font-bold font-sans">INGENIEURBÜRO IDRIZI</div>
                 <div>Sinan Idrizi, M.Sc.</div>
-                <div>TGA-Fachplanung &amp; Energieberatung</div>
+                <div>Zertifizierter Energieberater</div>
                 <div>Weil der Stadt</div>
             </div>
             <div class="space-y-2">
