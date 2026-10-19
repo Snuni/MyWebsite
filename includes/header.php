@@ -79,17 +79,8 @@
     <!-- Header / Navigation -->
     <header class="sticky top-0 z-50 bg-[#0B0F17]/90 backdrop-blur-md border-b border-brand-border/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded border border-brand-border bg-brand-slate flex items-center justify-center text-brand-crimson font-bold text-xl group-hover:border-brand-crimson transition-colors">
-                    I
-                </div>
-                <div>
-                    <div class="font-bold tracking-tight text-white text-lg flex items-center gap-2">
-                        INGENIEURBÜRO IDRIZI
-                        <span class="text-[14px] font-mono-tech px-1.5 py-0.5 rounded bg-brand-slate border border-brand-border text-slate-300">M.Sc.</span>
-                    </div>
-                    <div class="text-xs font-mono-tech text-slate-400">ENERGIEBERATUNG</div>
-                </div>
+            <a href="#" class="flex items-center gap-3 group py-2">
+                <img src="img/logo.svg" alt="Ingenieurbüro Idrizi Logo" class="h-10 w-auto object-contain">
             </a>
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#leistungen" class="hover:text-white transition-colors">Leistungen</a>
