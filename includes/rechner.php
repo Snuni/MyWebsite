@@ -78,7 +78,7 @@
                         <i class="fa-solid fa-shield-halved"></i> Der zertifizierte Energieberater-Mehrwert
                     </div>
                     <p class="text-[11px] text-slate-400 font-mono-tech leading-relaxed">
-                        Manchmal optional, manchmal gesetzliche Pflicht – aber <strong class="text-slate-200">immer Ihr klarer Vorteil</strong>: Als gelisteter Experte schalte ich für Sie den <strong class="text-brand-green">+5% iSFP-Bonus</strong> frei, verdopple die förderfähigen Höchstgrenzen und kümmere mich um die rechtssichere Abwicklung bei BAFA und KfW.
+                        <strong class="text-slate-200">Immer Ihr klarer Vorteil</strong>: Als gelisteter Experte schalte ich für Sie den <strong class="text-brand-green">+5% iSFP-Bonus</strong> frei, verdopple die förderfähigen Höchstgrenzen und kümmere mich um die rechtssichere Abwicklung bei BAFA und KfW.
                     </p>
                 </div>
             </div>
