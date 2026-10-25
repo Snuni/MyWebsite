@@ -6,38 +6,13 @@
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 30px 30px;
   color: #f3f4f6;
-  padding: 20px 20px 60px 20px;
+  padding: 40px 20px 60px 20px;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-/* Header Navbar */
-.hero-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 40px;
-}
-
-.site-logo {
-  height: 48px;
-  width: auto;
-}
-
-.hero-nav a {
-  color: #9ca3af;
-  text-decoration: none;
-  margin-left: 24px;
-  font-size: 0.95rem;
-  transition: color 0.2s ease;
-}
-
-.hero-nav a:hover {
-  color: #ffffff;
 }
 
 /* Hero Grid Layout */
