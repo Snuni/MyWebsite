@@ -1,88 +1,112 @@
-<!-- Hero Section -->
-    <section class="relative py-20 lg:py-28 overflow-hidden border-b border-brand-border/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+<?php
+// includes/hero.php
+?>
+<!-- Einbindung des spezifischen CSS für den Hero-Bereich -->
+<link rel="stylesheet" href="includes/hero.css">
 
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-slate/80 border border-brand-border text-xs font-mono-tech text-slate-300">
-                        <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
-                        Zertifizierter Energie-Effizienz-Experte (BAFA / KfW) [Eröffnung ab November 2026]
-                    </div>
-
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                        Energieberatung <br>
-                        <span class="text-slate-400 font-light">&amp; Wärmepumpen-Planung.</span>
-                    </h1>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                        Wir berechnen, bewerten und dokumentieren die technische Grundlage Ihres Sanierungs- und Heizungsprojekts – normgerecht nach DIN EN 12831 und DIN V 18599. Von der exakten Raumheizlast bis zur maximalen Förderquote.
-                    </p>
-
-                    <!-- Bullet Points -->
-                    <div class="grid sm:grid-cols-2 gap-3 text-xs font-mono-tech text-slate-300 pt-2">
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-green"></i>
-                            Individueller Sanierungsfahrplan (iSFP)
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-green"></i>
-                            Raumweise Heizlastberechnung
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-green"></i>
-                            Hydraulischer Abgleich Verf. B
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i class="fa-solid fa-check text-brand-green"></i>
-                            Förderantragsstellung BAFA / KfW
-                        </div>
-                    </div>
-
-                    <!-- Hero CTAs -->
-                    <div class="pt-4 flex flex-wrap gap-4">
-                        <a href="#kontakt" class="px-6 py-3 text-sm font-semibold text-white bg-brand-blue hover:bg-rose-700 rounded transition-colors flex items-center gap-2 shadow-lg shadow-rose-950/30">
-                            Erstgespräch vereinbaren
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="#rechner" class="px-6 py-3 text-sm font-semibold text-slate-200 bg-brand-slate hover:bg-slate-800 border border-brand-border rounded transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-calculator text-brand-green"></i>
-                            Förderrechner
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Technical Blueprint Spec Box (Gehört noch zum Hero dazu!) -->
-                <div class="lg:col-span-5 bg-brand-slate/60 border border-brand-border rounded-lg p-6 backdrop-blur-sm relative shadow-2xl">
-                    <div class="text-xs font-mono-tech text-slate-400 border-b border-brand-border/60 pb-3 mb-4 flex justify-between items-center">
-                        <span>Unser Qualitätsversprechen</span>
-                        <span class="text-brand-blue">WEIL DER STADT</span>
-                    </div>
-
-                    <div class="space-y-4 font-mono-tech text-xs">
-                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
-                            <span class="text-slate-400">QUALIFIKATION:</span>
-                            <span class="text-white font-bold">M.Sc. Ingenieur</span>
-                        </div>
-                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
-                            <span class="text-slate-400">CAD / SIMULATION:</span>
-                            <span class="text-white">Hottgenroth Simulation</span>
-                        </div>
-                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
-                            <span class="text-slate-400">NORMENBASIS:</span>
-                            <span class="text-slate-200">DIN EN 12831 / DIN V 18599</span>
-                        </div>
-                        <div class="flex justify-between items-center p-2 rounded bg-slate-900/50">
-                            <span class="text-slate-400">FÖRDERFÄHIGKEIT:</span>
-                            <span class="text-brand-green font-bold">Bis zu 50% - 80% Zuschuss</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 p-3 rounded bg-brand-navy border border-brand-border text-[11px] text-slate-400 font-mono-tech leading-relaxed">
-                        <i class="fa-solid fa-circle-info text-brand-blue mr-1"></i>
-                        Vermeiden Sie Fehldimensionierungen bei Wärmepumpen. Unsere exakten Berechnungen sichern Effizienz und volle Fördermittel.
-                    </div>
-                </div>
-
-            </div>
+<section class="hero-section">
+  <div class="hero-container">
+    
+    <!-- Main Hero Grid -->
+    <div class="hero-grid">
+      
+      <!-- Linke Spalte: Headline, Badges & Content -->
+      <div class="hero-text-content">
+        <div class="badge-status">
+          <span class="status-dot"></span>
+          Zertifizierter Energie-Effizienz-Experte (BAFA / KfW)
         </div>
-    </section>
+
+        <h1 class="hero-title">
+          Energie-Experte<br>
+          für Ihre Sanierung.<br>
+          <span class="highlight-text">Zukunftssicher. Normgerecht.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Ingenieurs-Leistungen von M.Sc. Ingenieur Idrizi in Weil der Stadt und Region.
+        </p>
+
+        <!-- Service Badge Grid -->
+        <div class="service-cards-grid">
+          <div class="service-card">
+            <h3>Individueller Sanierungsfahrplan (iSFP)</h3>
+          </div>
+          <div class="service-card">
+            <h3>Raumweise Heizlastberechnung & Hydraulischer Abgleich</h3>
+          </div>
+          <div class="service-card">
+            <h3>Förderantragstellung BAFA / KfW</h3>
+          </div>
+        </div>
+
+        <p class="hero-description">
+          Vermeiden Sie Fehldimensionierungen bei Wärmepumpen. Sichern Sie sich 
+          <strong>bis zu 80% Zuschuss</strong> mit unserer Expertise in CAD / Hottgenroth Simulation nach DIN-Normen.
+        </p>
+
+        <!-- Call to Action Buttons -->
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn btn-primary">
+            Erstgespräch vereinbaren 
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          
+          <a href="#rechner" class="btn btn-secondary">
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="16" y1="14" x2="16" y2="18"/>
+              <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/>
+            </svg>
+            Förderrechner
+          </a>
+        </div>
+      </div>
+
+      <!-- Rechte Spalte: Key Visual Image (Greift auf den Haupt-Ordner 'img/' zu) -->
+      <div class="hero-image-wrapper">
+        <div class="image-frame">
+          <img src="img/waermepumpe.jpg" alt="Moderne Wärmepumpen-Installation" class="hero-img">
+          <div class="image-overlay-glow"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Qualitätsversprechen Banner -->
+    <div class="quality-banner">
+      <div class="quality-header">
+        <span class="quality-title">UNSER QUALITÄTSVERSPRECHEN</span>
+        <span class="quality-location">WEIL DER STADT</span>
+      </div>
+      
+      <div class="quality-details">
+        <div class="quality-item">
+          <span class="label">QUALIFIKATION:</span>
+          <span class="value">M.Sc. Ingenieur</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">SIMULATION:</span>
+          <span class="value">Hottgenroth</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">NORMEN:</span>
+          <span class="value">DIN EN 12831 / DIN V 18599</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">FÖRDERUNG:</span>
+          <span class="value highlight">Bis zu 50% – 80% Zuschuss</span>
+        </div>
+      </div>
+
+      <p class="quality-note">Sichern Sie sich volle Fördermittel für Ihre Wärmepumpe.</p>
+    </div>
+
+  </div>
+</section>
