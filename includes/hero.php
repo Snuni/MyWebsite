@@ -1,233 +1,112 @@
-/* Hero Section Styling */
-.hero-section {
-  background-color: #0b0f19;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  color: #f3f4f6;
-  padding: 40px 20px 60px 20px;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
+<?php
+// includes/hero.php
+?>
+<!-- Einbindung des spezifischen CSS für den Hero-Bereich -->
+<link rel="stylesheet" href="includes/hero.css">
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+<section class="hero-section">
+  <div class="hero-container">
+    
+    <!-- Main Hero Grid -->
+    <div class="hero-grid">
+      
+      <!-- Linke Spalte: Headline, Badges & Content -->
+      <div class="hero-text-content">
+        <div class="badge-status">
+          <span class="status-dot"></span>
+          Zertifizierter Energie-Effizienz-Experte (BAFA / KfW)
+        </div>
 
-/* Hero Grid Layout */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 40px;
-  align-items: center;
-  margin-bottom: 50px;
-}
+        <h1 class="hero-title">
+          Energie-Experte<br>
+          für Ihre Sanierung.<br>
+          <span class="highlight-text">Zukunftssicher. Normgerecht.</span>
+        </h1>
 
-/* Text Content */
-.badge-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: #94a3b8;
-  margin-bottom: 24px;
-}
+        <p class="hero-subtitle">
+          Ingenieurs-Leistungen von M.Sc. Ingenieur Idrizi in Weil der Stadt und Region.
+        </p>
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
-  border-radius: 50%;
-  box-shadow: 0 0 8px #10b981;
-}
+        <!-- Service Badge Grid -->
+        <div class="service-cards-grid">
+          <div class="service-card">
+            <h3>Individueller Sanierungsfahrplan (iSFP)</h3>
+          </div>
+          <div class="service-card">
+            <h3>Raumweise Heizlastberechnung & Hydraulischer Abgleich</h3>
+          </div>
+          <div class="service-card">
+            <h3>Förderantragstellung BAFA / KfW</h3>
+          </div>
+        </div>
 
-.hero-title {
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
+        <p class="hero-description">
+          Vermeiden Sie Fehldimensionierungen bei Wärmepumpen. Sichern Sie sich 
+          <strong>bis zu 80% Zuschuss</strong> mit unserer Expertise in CAD / Hottgenroth Simulation nach DIN-Normen.
+        </p>
 
-.highlight-text {
-  color: #3b82f6;
-}
+        <!-- Call to Action Buttons -->
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn btn-primary">
+            Erstgespräch vereinbaren 
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          
+          <a href="#rechner" class="btn btn-secondary">
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="16" y1="14" x2="16" y2="18"/>
+              <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"/>
+            </svg>
+            Förderrechner
+          </a>
+        </div>
+      </div>
 
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: #9ca3af;
-  margin-bottom: 30px;
-}
+      <!-- Rechte Spalte: Key Visual Image (Greift auf den Haupt-Ordner 'img/' zu) -->
+      <div class="hero-image-wrapper">
+        <div class="image-frame">
+          <img src="img/waermepumpe.jpg" alt="Moderne Wärmepumpen-Installation" class="hero-img">
+          <div class="image-overlay-glow"></div>
+        </div>
+      </div>
 
-/* Service Cards */
-.service-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
+    </div>
 
-.service-card {
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 14px;
-  backdrop-filter: blur(8px);
-}
+    <!-- Qualitätsversprechen Banner -->
+    <div class="quality-banner">
+      <div class="quality-header">
+        <span class="quality-title">UNSER QUALITÄTSVERSPRECHEN</span>
+        <span class="quality-location">WEIL DER STADT</span>
+      </div>
+      
+      <div class="quality-details">
+        <div class="quality-item">
+          <span class="label">QUALIFIKATION:</span>
+          <span class="value">M.Sc. Ingenieur</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">SIMULATION:</span>
+          <span class="value">Hottgenroth</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">NORMEN:</span>
+          <span class="value">DIN EN 12831 / DIN V 18599</span>
+        </div>
+        <div class="quality-divider">|</div>
+        <div class="quality-item">
+          <span class="label">FÖRDERUNG:</span>
+          <span class="value highlight">Bis zu 50% – 80% Zuschuss</span>
+        </div>
+      </div>
 
-.service-card h3 {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #e2e8f0;
-  margin: 0;
-  line-height: 1.35;
-}
+      <p class="quality-note">Sichern Sie sich volle Fördermittel für Ihre Wärmepumpe.</p>
+    </div>
 
-.hero-description {
-  font-size: 0.95rem;
-  color: #94a3b8;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-/* Buttons */
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background-color: #3b82f6;
-  color: #ffffff;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
-}
-
-.btn-primary:hover {
-  background-color: #2563eb;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: rgba(30, 41, 59, 0.8);
-  color: #34d399;
-  border: 1px solid rgba(52, 211, 153, 0.2);
-}
-
-.btn-secondary:hover {
-  background-color: rgba(30, 41, 59, 1);
-  border-color: rgba(52, 211, 153, 0.4);
-}
-
-/* Right Column Image */
-.hero-image-wrapper {
-  position: relative;
-}
-
-.image-frame {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Quality Banner Bottom */
-.quality-banner {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.quality-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  color: #64748b;
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.quality-details {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  font-size: 0.9rem;
-  margin-bottom: 12px;
-}
-
-.quality-item .label {
-  color: #64748b;
-  margin-right: 6px;
-}
-
-.quality-item .value {
-  color: #f1f5f9;
-  font-weight: 600;
-}
-
-.quality-item .value.highlight {
-  color: #34d399;
-}
-
-.quality-divider {
-  color: #334155;
-}
-
-.quality-note {
-  font-size: 0.85rem;
-  color: #10b981;
-  margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  
-  .service-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .quality-divider {
-    display: none;
-  }
-  
-  .quality-details {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-}
+  </div>
+</section>
