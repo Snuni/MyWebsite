@@ -233,7 +233,7 @@
       <div class="hero-text-content">
         <div class="badge-status">
           <span class="status-dot"></span>
-          Zertifizierter Energie-Effizienz-Experte (BAFA / KfW)
+          (in Kürze) Zertifizierter Energie-Effizienz-Experte (BAFA / KfW)
         </div>
 
         <h1 class="hero-title">
